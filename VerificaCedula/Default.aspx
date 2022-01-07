@@ -14,10 +14,11 @@
     <form id="form1" runat="server">
         <div>
            <h3> Verificar Datos </h3>
+            <div style="display:none">
             Número : <asp:TextBox ID="numero" runat="server" ClientIDMode="Static" Text="99999999"></asp:TextBox>
             <br />
             Nombre archivo :<asp:TextBox ID="nombrearchivo" runat="server"  ClientIDMode="Static" Text="imagen.jpg"></asp:TextBox>
-            
+            </div>
             <br /><br />
             <div id="imagen"></div> 
             <br />
@@ -52,7 +53,6 @@
                 img1.width = 250;
                 div.appendChild(img1);
                // alert(img1.src)
-
                // alert(nombrearchivo)
                 $.ajax({
                     type: "POST",
@@ -61,10 +61,10 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (r) {
-                       // alert(r.d);
+                        //alert(r.d);
                         $("#verificando").hide();
 
-                        if (r.d = "true") {
+                        if (r.d == true) {
                             $("#true").show();
                         } else {
                             $("#false").show();

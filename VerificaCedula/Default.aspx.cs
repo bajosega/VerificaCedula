@@ -19,7 +19,12 @@ namespace VerificaCedula
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["n1"] != null && Request.QueryString["n2"] != null) { 
+            string m_nombrearchivo = Request.QueryString["n1"].ToString();
+            string m_numero = Request.QueryString["n2"].ToString();
+            if (m_nombrearchivo != "") nombrearchivo.Text = m_nombrearchivo;
+            if (m_numero != "") numero.Text = m_numero;
+            }
         }
 
 
@@ -32,7 +37,7 @@ namespace VerificaCedula
            //NombreArchivo = "10002-D1.jpg";
             Debug.WriteLine("clear");
 
-          
+  
             numero = numero.Replace(".", string.Empty);
             numero = numero.Replace(",", string.Empty);
 
