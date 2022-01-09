@@ -15,12 +15,12 @@
         <div>
            <h3> Verificar Datos </h3>
             <div style="display:none">
-            Número : <asp:TextBox ID="numero" runat="server" ClientIDMode="Static" Text="99999999"></asp:TextBox>
+            Número : <asp:TextBox ID="numero" runat="server" ClientIDMode="Static" Text=""></asp:TextBox>
             <br />
-            Nombre archivo :<asp:TextBox ID="nombrearchivo" runat="server"  ClientIDMode="Static" Text="imagen.jpg"></asp:TextBox>
+            Nombre archivo :<asp:TextBox ID="nombrearchivo" runat="server"  ClientIDMode="Static" Text=""></asp:TextBox>
             </div>
             <br /><br />
-            <div id="imagen"></div> 
+            <div id="imagen" style="display:none"></div> 
             <br />
             
             <div id="verificando" > 
@@ -66,6 +66,8 @@
 
                         if (r.d == true) {
                             $("#true").show();
+                            $("#imagen").show();
+
                         } else {
                             $("#false").show();
                         }
